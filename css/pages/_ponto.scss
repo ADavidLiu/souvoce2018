@@ -1,0 +1,221 @@
+.section-ponto {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 8.5vw;
+        left: 1.5rem;
+        background-image: url("../images/car.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left center;
+        height: 11.1875rem;
+        width: 30vw;
+        display: none;
+        @include atSmall {
+            display: block;
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 2vw;
+        right: 1rem;
+        background-image: url("../images/plane.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right center;
+        height: 9vw;
+        width: 50vw;
+        display: none;
+        @include atSmall {
+            display: block;
+        }
+    }
+
+    &__table {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid $color-gray;
+
+        &-arrow {
+            background-color: $color-white;
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 0 !important;
+            padding-top: 6rem !important;
+            @include atSmall {
+                margin-bottom: 0;
+                padding-top: 0 !important;
+                padding-left: 2.5rem !important;
+                padding-right: 10px !important;
+            }
+
+            &:before {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 40px 500px 0 500px;
+                border-color: $color-primary-light transparent transparent transparent;
+                @include atSmall {
+                    left: 0;
+                    bottom: 0;
+                    border-color: transparent transparent transparent $color-primary-light;
+                    transform: none;
+                }
+            }
+
+            &:after {
+                left: 50%;
+                bottom: 0;
+                transform: translate(-50%, 100%);
+                border-width: 40px 500px 0 500px;
+                border-color: $color-white transparent transparent transparent;
+                @include atSmall {
+                    right: 0;
+                    left: auto;
+                    transform: translateX(100%);
+                    border-color: transparent transparent transparent $color-white;
+                }
+            }
+            
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                @include atSmall {
+                    top: 0;
+                    border-width: 33px 0 33px 20px;
+                }
+                @include atMedium {
+                    border-width: 35px 0 35px 20px;
+                }
+                @include atLarge {
+                    border-width: 27px 0 27px 20px;
+                }
+            }
+        }
+
+        &-row {
+            @include atSmall {
+                display: flex;
+                align-items: stretch;
+                justify-content: space-between;
+            }
+
+            &:first-child {
+                background-color: $color-primary-light;
+
+                & > * {
+                    padding: 1.333rem 0;
+                    @include atSmall {
+                        padding: 1rem 1.875rem;
+                    }
+
+                    &:first-child {
+                        &:after {
+                            content: ">";
+                            position: absolute;
+                            top: auto;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translate(-50%, 50%) rotate(90deg);
+                            font-size: 2.5rem;
+                            color: $color-white;
+                            font-weight: 700;
+                            @include atSmall {
+                                top: 50%;
+                                left: auto;
+                                right: 0;
+                                bottom: auto;
+                                font-size: 1.875rem;
+                                transform: translate(50%, -50%);
+                            }
+                            @include atMedium {
+                                transform: translate(100%, -50%);
+                            }
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        padding-bottom: 0 !important;
+                        @include atSmall {
+                            padding-bottom: 1rem !important;
+                        }
+                    }
+
+                    &:last-child {
+                        &:before {
+                            content: "=";
+                            position: absolute;
+                            top: 0;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: 2.5rem;
+                            color: $color-white;
+                            font-weight: 700;
+                            @include atSmall {
+                                top: 50%;
+                                left: 0;
+                                font-size: 1.875rem;
+                            }
+                            @include atMedium {
+                                transform: translate(-100%, -50%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                padding: 0 5px;
+                border-top: 1px solid $color-gray-dark-4;
+                background-color: $color-gray-dark-3;
+                @include atSmall {
+                    padding: 1rem 1.875rem;
+                }
+
+                & > * {
+                    & + * {
+                        &:before {
+                            content: ">";
+                            position: absolute;
+                            top: 0;
+                            left: 50%;
+                            transform: translate(-50%, -50%) rotate(90deg);
+                            font-size: 2.5rem;
+                            color: $color-primary-light;
+                            font-weight: 700;
+                            @include atSmall {
+                                top: 50%;
+                                left: 0;
+                                font-size: 1.875rem;
+                                transform: translate(-50%, -50%);
+                            }
+                            @include atMedium {
+                                transform: translate(-100%, -50%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > * {
+                position: relative;
+                padding: 1.875rem 0;
+                text-align: center;
+                @include atSmall {
+                    padding: 0 1.875rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

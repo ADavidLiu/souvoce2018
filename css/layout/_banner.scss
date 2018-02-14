@@ -1,0 +1,104 @@
+.banner {
+    padding: 3.333rem 15px;
+    background-color: $color-white;
+    text-align: center;
+    background-image: linear-gradient(to top, rgba($color-gray, 1) 0%, rgba($color-gray, .0) 40%);
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid $color-border;
+    @include atSmall {
+        padding: 2.5rem 15px;
+    }
+
+    &__container {
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__logo {
+        width: 50%;
+        max-width: 211px;
+        display: block;
+        margin: 0 auto;
+        @include atSmall {
+            width: 20%;
+            margin: 0 auto 0 0;
+        }
+
+        &-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__title {
+        margin: 1.333rem auto;
+        @include atSmall {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__menu {
+        width: 100%;
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+
+        &-item {
+            transition: all .25s;
+            @include atMedium {
+                font-size: 0.75rem;
+            }
+
+            & + & {
+                margin-top: 1.667rem;
+                @include atSmall {
+                    margin-top: 0;
+                    margin-left: 1.25rem;
+                }
+            }
+
+            &--active {
+                color: $color-white;
+                .banner__menu-link {
+                    background-color: $color-primary;
+                }
+            }
+        }
+
+        &-link {
+            background-color: $color-gray-alt;
+            padding: 1rem 1.667rem;
+            border-radius: 1rem;
+            border: 1px solid $color-border-alt;
+            display: block;
+            transition: all .25s;
+            @include atSmall {
+                border-radius: 0.75rem;
+                padding: 0.75rem 1.25rem;
+            }
+            @include atMedium {
+                min-width: 150px;
+                padding: 0.5rem 1rem;
+            }
+
+            &:hover {
+                color: $color-white;
+                background-color: $color-primary;
+            }
+        }
+    }
+}

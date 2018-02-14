@@ -1,0 +1,60 @@
+.heading-primary {
+    font-size: 3.333rem;
+    font-family: $font-bld;
+    color: $color-primary;
+    @include atSmall {
+        font-size: 2.5rem;
+    }
+}
+
+.heading-secondary {
+    font-size: 2rem;
+    font-family: $font-bld;
+    letter-spacing: -0.005em;
+    color: $color-text;
+    @include atSmall {
+        font-size: 1.5rem;
+    }
+
+    &--big {
+        font-size: 2.1875rem;
+    }
+}
+
+.paragraph {
+    font-size: 1.167rem;
+    line-height: 1.8333rem;
+    letter-spacing: -0.005em;
+    font-family: $font-reg;
+    color: $color-text;
+    @include atSmall {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+
+    &--smaller {
+        font-size: 10px;
+    }
+
+    &--small {
+        font-size: 1rem;
+        @include atSmall {
+            font-size: 0.75rem;
+        }
+    }
+
+    &--med {
+        font-size: 1.333rem;
+        @include atSmall {
+            font-size: 1rem;
+        }
+    }
+
+    &--big {
+        font-size: 1.125rem;
+    }
+
+    &--huge {
+        font-size: 1.25rem;
+    }
+}

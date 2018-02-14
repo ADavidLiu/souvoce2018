@@ -1,0 +1,22 @@
+.list {
+    &__item {
+        position: relative;
+        padding-left: 1.667rem;
+        @include atSmall {
+            padding-left: 1.25rem;
+        }
+
+        &:before {
+            content: "•";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 2.5rem;
+            color: $color-primary;
+            transform: translateY(-1px);
+            @include atSmall {
+                font-size: 1.875rem;
+            }
+        }
+    }
+}

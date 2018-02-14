@@ -1,0 +1,180 @@
+.section-groups {
+    &__item {
+        text-align: center;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 1.25rem;
+        overflow: auto;
+        max-width: calc(100vw - 30px);
+        margin-left: auto;
+        margin-right: auto;
+        @include atSmall {
+            border-radius: 0.9375rem;
+            max-width: none;
+        }
+
+        &-header,
+        &-cell {
+            padding: 1rem;
+            @include atSmall {
+                padding: 0.75rem;
+            }
+        }
+
+        &-header {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        &-cell {
+            @include atSmall {
+                flex: 1 1 0;
+            }
+
+            & + & {
+                border-top-width: 1px;
+                border-top-style: solid;
+                @include atSmall {
+                    border-top: 0;
+                    border-left-width: 1px;
+                    border-left-style: solid;
+                }
+            }
+
+            &--placeholder {
+                display: none;
+                @include atSmall {
+                    display: block;
+                }
+            }
+
+            &--copy {
+                padding: 1.667rem 3.333rem;
+                @include atSmall {
+                    padding: 1.25rem 2.5rem;
+                }
+            }
+        }
+
+        &-row {
+            @include atSmall {
+                display: flex;
+                align-items: stretch;
+                justify-content: space-between;
+            }
+
+            & + & {
+                border-top-width: 1px;
+                border-top-style: solid;
+            }
+        }
+
+        &--green {
+            border-color: $color-green-dark;
+
+            .section-groups__item {
+                &-row {
+                    border-color: $color-green-dark;
+                }
+
+                &-header {
+                    border-color: $color-green-dark;
+                    background-color: $color-green;
+                }
+
+                &-cell {
+                    border-color: $color-green-dark;
+                    background-color: $color-green-light;
+                }
+            }
+        }
+
+        &--red {
+            border-color: $color-red-dark;
+
+            .section-groups__item {
+                &-row {
+                    border-color: $color-red-dark;
+                }
+
+                &-header {
+                    border-color: $color-red-dark;
+                    background-color: $color-red;
+                }
+
+                &-cell {
+                    border-color: $color-red-dark;
+                    background-color: $color-red-light;
+                }
+            }
+        }
+
+        &--orange {
+            border-color: $color-orange-dark;
+
+            .section-groups__item {
+                &-row {
+                    border-color: $color-orange-dark;
+                }
+
+                &-header {
+                    border-color: $color-orange-dark;
+                    background-color: $color-orange;
+                }
+
+                &-cell {
+                    border-color: $color-orange-dark;
+                    background-color: $color-orange-light;
+                }
+            }
+        }
+
+        &--blue {
+            border-color: $color-blue-dark;
+
+            .section-groups__item {
+                &-row {
+                    border-color: $color-blue-dark;
+                }
+
+                &-header {
+                    background-color: $color-blue;
+                }
+
+                &-cell {
+                    border-color: $color-blue-dark;
+                    background-color: $color-blue-light;
+                }
+            }
+        }
+        
+        &--diamond {
+            border-color: $color-diamond-dark;
+
+            .section-groups__item {
+                &-row {
+                    border-color: $color-diamond-dark;
+                }
+
+                &-header {
+                    background-color: $color-diamond;
+                }
+
+                &-cell {
+                    border-color: $color-diamond-dark;
+                    background-color: $color-diamond-light;
+                }
+            }
+        }
+    }
+
+    &__toggle {
+        background-color: $color-text;
+        padding: 1rem;
+        cursor: pointer;
+        @include atSmall {
+            padding: 0.75rem;
+            /* transform: translateY(-40px); */
+        }
+    }
+}

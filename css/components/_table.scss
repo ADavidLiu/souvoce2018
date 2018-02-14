@@ -1,0 +1,123 @@
+.table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+
+    &-wrapper {
+        width: 100%;
+        overflow: auto;
+    }
+
+    &__row {
+        &--hidden {
+            overflow: hidden;
+        }
+    }
+
+    &__cell {
+        border-top: 0 !important;
+        padding: 1rem !important;
+        text-align: left;
+        background-color: $color-gray-alt-2;
+        text-transform: uppercase;
+        width: 33.33%;
+        @include atSmall {
+            padding: 0.75rem 1.875rem !important;
+            width: 50%;
+        }
+
+        &[colspan] {
+            padding: 0 !important;
+            @include atSmall {
+                padding: 0 !important;
+                border-top: 0 !important;
+            }
+        }
+
+        &:first-child,
+        &:nth-child(2) {
+            @include atSmall {
+                width: 25%;
+            }
+        }
+
+        &--hidden {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    }
+
+    &--remaining {
+        display: none;
+    }
+
+    &--green {
+        .table {
+            &__row {
+                &--titles {
+                    .table__cell {
+                        background-color: $color-green-light;
+                    }
+                }
+            }
+
+            &__cell:not([colspan]):not(.table__cell--hidden) {
+                border-top: 1px solid $color-green-dark !important;
+            }
+        }
+    }
+
+    &--blue {
+        .table {
+            &__row {
+                &--titles {
+                    .table__cell {
+                        background-color: $color-blue-light;
+                    }
+                }
+            }
+
+            &__cell:not([colspan]):not(.table__cell--hidden) {
+                border-top: 1px solid $color-blue-dark !important;
+            }
+        }
+    }
+
+    &--orange {
+        .table {
+            &__row {
+                &--titles {
+                    .table__cell {
+                        background-color: $color-orange-light;
+                    }
+                }
+            }
+
+            &__cell:not([colspan]):not(.table__cell--hidden) {
+                border-top: 1px solid $color-orange-dark !important;
+            }
+        }
+    }
+
+    &--red {
+        .table {
+            &__row {
+                &--titles {
+                    .table__cell {
+                        background-color: $color-red-light;
+                    }
+                }
+            }
+
+            &__cell:not([colspan]):not(.table__cell--hidden) {
+                border-top: 1px solid $color-red-dark !important;
+            }
+        }
+    }
+
+    &--auto-cell {
+        .table__cell {
+            width: auto !important;
+        }
+    }
+}

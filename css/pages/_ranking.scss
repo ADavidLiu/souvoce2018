@@ -1,0 +1,21 @@
+.section-ranking {
+    &__intro {
+        & > * {
+            width: 225px;
+            display: block;
+            margin: 0 auto;
+            @include atSmall {
+                margin: 0;
+            }
+
+            & + * {
+                margin-top: 3.125rem;
+                
+                @include atSmall {
+                    margin-top: 0;
+                    margin-left: 3.125rem;
+                }
+            }
+        }
+    }
+}

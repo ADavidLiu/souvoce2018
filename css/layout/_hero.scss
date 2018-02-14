@@ -1,0 +1,162 @@
+.hero {
+    background-image: linear-gradient(to top, rgba($color-gray, 1) 0%, rgba($color-gray, .0) 40%);
+    border-bottom: 1px solid $color-border;
+    padding: 2.5rem 15px;
+    @include atSmall {
+        padding: 1.875rem 15px;
+    }
+
+    &__content {
+        position: relative;
+        margin: 0 auto;
+        max-width: 370px;
+        float: none;
+        @include atSmall {
+            float: left;
+            max-width: none;
+        }
+    }
+
+    &__logo {
+        width: 50%;
+        max-width: 298px;
+        display: block;
+        margin: 0 auto;
+        @include atSmall {
+            width: 30%;
+            margin: 0 0 0 2.5rem;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+        @include atSmall {
+            margin-top: -10rem;
+            max-width: 995px;
+        }
+        @include atMedium {
+            margin-top: -13rem;
+        }
+    }
+
+    &__copy {
+        margin: 2rem auto 6rem auto;
+        @include atSmall {
+            margin: 0;
+            position: absolute;
+            top: -7rem;
+            right: 0;
+        }
+    }
+
+    &__bubble {
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &-title {
+            text-align: right;
+            transform: translateX(-1.5rem);
+            @include atSmall {
+                transform: translateX(-2.5rem);
+            }
+
+            &--offset {
+                text-align: left;
+                transform: translateX(3rem);
+                @include atSmall {
+                    transform: translateX(5rem);
+                }
+            }
+        }
+
+        &--small {
+            background-color: $color-primary-light;
+            height: 19rem;
+            width: 19rem;
+            position: absolute;
+            bottom: 9rem;
+            right: 0;
+            @include atSmall {
+                height: 16.875rem;
+                width: 16.875rem;
+                bottom: -10rem;
+            }
+            @include atMedium {
+                bottom: -9.5rem;
+            }
+
+            & > * {
+                display: block;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+                @include atSmall {
+                    width: 60%;
+                }
+            }
+        }
+
+        &--big {
+            height: 27rem;
+            width: 27rem;
+            background-color: $color-primary;
+            position: relative;
+            @include atSmall {
+                height: 28rem;
+                width: 28rem;
+            }
+            @include atMedium {
+                height: 31rem;
+                width: 31rem;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 4rem;
+                right: 3rem;
+                height: 63px;
+                width: 63px;
+                background-image: url("../images/dots-top.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                pointer-events: none;
+                @include atMedium {
+                    top: 8rem;
+                    right: 3rem;
+                }
+                @include atLarge {
+                    top: 7.5rem;
+                    right: 3rem;
+                }
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -4rem;
+                left: -3rem;
+                background-image: url("../images/dots-bottom.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 200px;
+                height: 217px;
+                pointer-events: none;
+                @include atSmall {
+                    bottom: -3rem;
+                    left: -1rem;
+                }
+                @include atMedium {
+                    bottom: -2rem;
+                    left: -0.5rem;
+                }
+            }
+        }
+    }
+}

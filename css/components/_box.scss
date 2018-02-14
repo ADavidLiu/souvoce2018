@@ -1,0 +1,14 @@
+.box {
+    padding: 2.1875rem;
+    border: 1px solid $color-border-alt;
+    background-color: $color-gray-alt-2;
+    border-radius: 1.25rem;
+    width: 100%;
+    @include atSmall {
+        border-radius: 0.9375rem;
+    }
+
+    &--bg-primary {
+        background-color: $color-primary;
+    }
+}

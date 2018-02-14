@@ -1,0 +1,58 @@
+html,
+body {
+    overflow-x: hidden;
+    font-size: 12px;
+    min-height: 100vh;
+    @include atSmall {
+        font-size: 14px;
+    }
+    @include atMedium {
+        font-size: 15px;
+    }
+    @include atLarge {
+        font-size: 16px;
+    }
+}
+
+main {
+    padding: 7.8125rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul,
+ol,
+span {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    @include linkStates(inherit, none);
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+input,
+button {
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+    text-shadow: 0 0 5px rgba($color-black, .5);
+}

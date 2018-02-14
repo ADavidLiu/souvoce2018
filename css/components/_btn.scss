@@ -1,0 +1,67 @@
+.btn {
+    border-radius: 1rem;
+    border: 1px solid $color-border-alt;
+    padding: 0.667rem 5.333rem;
+    font-family: $font-bld;
+    background-color: $color-primary;
+    font-size: 1.667rem;
+    transition: all .25s;
+    @include linkStates($color-white, none);
+    @include atSmall {
+        font-size: 1.25rem;
+        border-radius: 0.75rem;
+        padding: 0.5rem 4rem;
+    }
+
+    span {
+        transition: all .25s;
+    }
+
+    &:hover {
+        background-color: transparent;
+        border-color: $color-primary;
+        @include linkStates($color-primary, none);
+    }
+
+    &--gray {
+        background-color: $color-gray-alt;
+        font-size: 2.0833rem;
+        padding: 1rem 2.5rem;
+        border-color: $color-border-alt !important;
+        color: $color-gray-dark;
+        @include linkStates($color-gray-dark !important, none);
+        @include atSmall {
+            font-size: 1.5625rem;
+            padding: 0.75rem 1.875rem;
+        }
+
+        span {
+            color: $color-gray-dark;
+        }
+    }
+
+    &--gray-dark {
+        background-color: $color-gray-dark;
+        font-size: 2.0833rem;
+        padding: 1rem 2.5rem;
+        border-color: $color-gray-dark !important;
+        color: $color-white;
+        @include linkStates($color-white !important, none);
+        @include atSmall {
+            font-size: 1.5625rem;
+            padding: 0.75rem 1.875rem;
+        }
+
+        span {
+            color: $color-white;
+        }
+
+        &:hover {
+            @include linkStates($color-gray-dark !important, none);
+
+            span {
+                color: $color-gray-dark;
+            }
+        }
+    }
+}

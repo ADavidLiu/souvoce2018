@@ -1,0 +1,51 @@
+.menu {
+    background-color: $color-primary;
+    padding: 1rem 2rem;
+    text-align: center;
+    @include atSmall {
+        text-align: left;
+        background-color: transparent;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @include atMedium {
+        justify-content: flex-start;
+    }
+
+    &__item {
+        position: relative;
+        transition: all .25s;
+
+        &:hover {
+            color: $color-primary-light;
+        }
+
+        & + & {
+            @include atSmall {
+                margin-left: 0.75rem;
+                padding-left: 0.75rem;
+            }
+
+            &:before {
+                @include atSmall {
+                    content: "•";
+                    position: absolute;
+                    top: 50%;
+                    left: -2px;
+                    transform: translateY(-50%);
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 0.5rem 0;
+        @include atSmall {
+            padding: 0;
+        }
+    }
+}
